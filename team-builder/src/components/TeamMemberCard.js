@@ -7,11 +7,6 @@ function TeamMemberCard(props) {
 			<p className='age'>{props.member.age}</p>
 			<p className='email'>{props.member.email}</p>
 			<p className='role'>{props.member.role}</p>
-			{/* {
-				props.member.hobbies.map((hobby, index) => {
-					return <p key={index}>{hobby}</p>
-				})
-			} */}
 		</div>
 	);
 }

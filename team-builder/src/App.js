@@ -11,24 +11,21 @@ const initTeamMembers = [
 		name: 'Justin',
 		age: '19',
 		email: 'lohner4@gmail.com',
-		role: 'Lambda School Student',
-		hobbies: ['golf', 'video games', 'music']
+		role: 'Lambda School Student'
 	},
 	{
 		id: uuid(),
 		name: 'Bingus',
 		age: '25',
 		email: 'bingus@bingus.com',
-		role: 'CEO of Starbucks',
-		hobbies: ['golf', 'skiing', 'travelling']
+		role: 'CEO of Starbucks'
 	},
 	{
 		id: uuid(),
 		name: 'Rick',
 		age: 'unknown',
 		email: 'thatsthewaythenewsgoes@plumbus.com',
-		role: 'Smartest man in the universe',
-		hobbies: ['drinking', 'drinking', 'drinking']
+		role: 'Smartest man in the universe'
 	}
 ]
 
@@ -36,16 +33,13 @@ const initMemberFormValues = {
 	name: '',
 	age: '',
 	email: '',
-	role: '',
-	hobbies: ['', '', '']
+	role: ''
 }
 
 function App() {
 
 	const [teamMembers, setTeamMembers] = useState(initTeamMembers);
 	const [formValues, setFormValues] = useState(initMemberFormValues);
-
-	console.log(teamMembers);
 
 	const inputChange = evt => {
 		setFormValues({
@@ -61,8 +55,7 @@ function App() {
 			name: formValues.name,
 			age: formValues.age,
 			email: formValues.email,
-			role: formValues.role,
-			// hobbies: ['', '', '']
+			role: formValues.role
 		}
 		setTeamMembers([...teamMembers, newTeamMember]);
 		setFormValues(initMemberFormValues);
@@ -72,6 +65,7 @@ function App() {
 		<div className='App'>
 			<header className='App-header'>
 				<h1>Team Member List</h1>
+			</header>
 				{
 					teamMembers.map(member => {
 						return (
@@ -80,7 +74,6 @@ function App() {
 					})
 				}
 				<Form values={formValues} inputChange={inputChange} submit={submit}/>
-			</header>
 		</div>
 	);
 }

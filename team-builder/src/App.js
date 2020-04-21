@@ -3,6 +3,7 @@ import { v4 as uuid } from 'uuid';
 import './App.css';
 
 import TeamMemberCard from './components/TeamMemberCard.js';
+import Form from './components/Form.js';
 
 const initTeamMembers = [
 	{
@@ -31,7 +32,7 @@ const initTeamMembers = [
 	}
 ]
 
-const initMemberValues = {
+const initMemberFormValues = {
 	name: '',
 	age: '',
 	email: '',
@@ -42,6 +43,30 @@ const initMemberValues = {
 function App() {
 
 	const [teamMembers, setTeamMembers] = useState(initTeamMembers);
+	const [formValues, setFormValues] = useState(initMemberFormValues);
+
+	console.log(teamMembers);
+
+	const inputChange = evt => {
+		setFormValues({
+			...formValues,
+			[evt.target.name]: evt.target.value
+		});
+	}
+
+	const submit = evt => {
+		evt.preventDefault();
+		const newTeamMember = {
+			id: uuid(),
+			name: formValues.name,
+			age: formValues.age,
+			email: formValues.email,
+			role: formValues.role,
+			// hobbies: ['', '', '']
+		}
+		setTeamMembers([...teamMembers, newTeamMember]);
+		setFormValues(initMemberFormValues);
+	}
 
 	return (
 		<div className='App'>
@@ -54,18 +79,10 @@ function App() {
 						);
 					})
 				}
+				<Form values={formValues} inputChange={inputChange} submit={submit}/>
 			</header>
 		</div>
 	);
 }
 
 export default App;
-
-// const initTeamMembers = [
-// 	{
-// 		name: 'Justin',
-// 		age: '19',
-// 		occupation: 'Lambda School Student',
-// 		hobbies: []
-// 	}
-// ]

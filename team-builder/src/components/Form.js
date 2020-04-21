@@ -1,4 +1,5 @@
 import React from 'react';
+import './ContentStyle.css';
 
 function Form(props) {
 	return (

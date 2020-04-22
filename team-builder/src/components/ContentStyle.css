@@ -1,0 +1,44 @@
+.team-member-card {
+	border: 4px solid black;
+	margin: 2%;
+	background-color: indigo;
+}
+
+.card-details {
+	margin: 1%;
+	padding: 2%;
+	background-color: #282c34;
+	color: white;
+	border: 4px solid black;
+	text-align: left;
+	font-size: 120%;
+}
+
+.team-member-form {
+	margin: 5%;
+	background-color: indigo;
+	color: white;
+	padding: 5%;
+	border: 4px solid black;
+}
+
+.team-member-form h2 {
+	font-size: 28px;
+}
+
+input {
+	background-color: black;
+	color: white;
+	border: none;
+	padding: 0.2%;
+}
+
+label {
+	margin: 2%;
+}
+
+button {
+	background-color: black;
+	color: white;
+	font-size: 120%;
+}
